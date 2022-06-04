@@ -1,0 +1,9 @@
+source 'https://rubygems.org'
+
+ruby File.read('.ruby-version').strip
+
+gem 'foreman'
+gem 'puma'
+gem 'rack'
+gem 'sinatra'
+gem 'sinatra-contrib'

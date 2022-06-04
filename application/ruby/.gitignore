@@ -1,0 +1,7 @@
+.bundle
+tmp/*
+!tmp/.keep
+log/*
+!log/.keep
+**/*.log
+vendor/bundle
