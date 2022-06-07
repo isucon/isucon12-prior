@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 environment ENV.fetch('RACK_ENV') { 'development' }
 
 workers ENV.fetch('WEB_WORKERS') { 1 }

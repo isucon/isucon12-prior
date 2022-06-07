@@ -2,8 +2,12 @@ source 'https://rubygems.org'
 
 ruby File.read('.ruby-version').strip
 
+gem 'activesupport'
 gem 'foreman'
+gem 'mysql2'
+gem 'mysql2-cs-bind'
 gem 'puma'
 gem 'rack'
-gem 'sinatra'
+gem 'sinatra', require: 'sinatra/base'
 gem 'sinatra-contrib'
+gem 'ulid'

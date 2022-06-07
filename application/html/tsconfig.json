@@ -34,7 +34,7 @@
     "noEmitHelpers": true,
     "noEmitOnError": true,
     "preserveConstEnums": true,
-    "preserveValueImports": true,
+    "preserveValueImports": false,
 
     "isolatedModules": true,
     "allowSyntheticDefaultImports": true,
