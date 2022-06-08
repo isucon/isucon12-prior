@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -xe
+
+. ./env
+
+exec bundle exec itamae ssh \
+  --host $ESXI_HOST \
+  --user $ESXI_USER \
+  -y node.yml \
+  recipe.rb
