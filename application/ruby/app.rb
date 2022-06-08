@@ -4,6 +4,7 @@ require 'sinatra/json'
 require 'active_support'
 require 'active_support/json'
 require 'active_support/time'
+require 'ulid'
 require_relative 'db'
 
 Time.zone = 'UTC'
@@ -12,7 +13,7 @@ class App < Sinatra::Base
   enable :logging
 
   set :session_secret, 'tagomoris'
-  set :sessions, key: 'session_isucon2021_prior', expire_after: 3600
+  set :sessions, key: 'session_isucon12_prior', expire_after: 3600
   set :show_exceptions, false
   set :public_folder, './public'
   set :json_encoder, ActiveSupport::JSON
@@ -80,7 +81,7 @@ class App < Sinatra::Base
       tx.query('TRUNCATE `users`')
 
       id = generate_id('users', tx)
-      tx.xquery('INSERT INTO `users` (`id`, `email`, `nickname`, `staff`, `created_at`) VALUES (?, ?, ?, true, NOW(6))', id, 'isucon2021_prior@isucon.net', 'isucon')
+      tx.xquery('INSERT INTO `users` (`id`, `email`, `nickname`, `staff`, `created_at`) VALUES (?, ?, ?, true, NOW(6))', id, 'isucon12-prior@isucon.net', 'isucon')
     end
 
     json(language: 'ruby')

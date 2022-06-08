@@ -1,4 +1,4 @@
-import { AppBar, Button, Container, CssBaseline, makeStyles, Toolbar, Typography } from '@material-ui/core';
+import { AppBar, Button, Container, CssBaseline, makeStyles, ThemeProvider, Toolbar, Typography } from '@material-ui/core';
 import { VFC } from "react";
 import { Route, Routes, useNavigate } from 'react-router'
 import { LockOpen, PersonAdd } from '@material-ui/icons'
@@ -7,6 +7,7 @@ import { SignupPage } from './signupPage';
 import { LoginPage } from './loginPage';
 import { useAppContext } from './context';
 import { SchedulePage } from './schedulePage';
+import { theme } from './theme';
 
 const useStyles = makeStyles(() => ({
   title: {
@@ -20,7 +21,7 @@ export const App: VFC = () => {
   const { user, logout } = useAppContext();
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
       <AppBar position="static">
         <Container>
@@ -44,6 +45,6 @@ export const App: VFC = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/schedules/:id" element={<SchedulePage />} />
       </Routes>
-    </>
+    </ThemeProvider>
   );
 }
